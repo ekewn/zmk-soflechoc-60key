@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define LOWER 1
@@ -48,6 +49,7 @@
             #binding-cells = <0>;
             continue-list = <POUND MINUS BACKSPACE UNDERSCORE>;
         };
+
         hrm: home_row_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -73,10 +75,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&gresc            &kp N1          &kp N2          &kp N3              &kp N4            &kp N5                                        &kp N6   &kp N7            &kp N8               &kp N9          &kp N0             &kp MINUS
-&kp TAB           &kp Q           &kp W           &kp E               &kp R             &kp T                                         &kp Y    &kp U             &kp I                &kp O           &kp P              &kp EQUAL
-&kp LEFT_SHIFT    &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LEFT_CONTROL D  &hrm LEFT_SHIFT F  &hrm CAPS G                                         &hrm CAPS H    &hrm LEFT_SHIFT J  &hrm RIGHT_CONTROL K  &hrm LEFT_ALT L  &hrm LEFT_GUI SEMI  &kp SQT &kp LG(LC(LEFT))  &kp Z           &kp X           &kp C               &kp V             &kp B            &kp DEL          &kp LA(F4)  &kp N    &kp M             &kp COMMA            &kp DOT         &kp FSLH           &kp LG(LC(RIGHT))
-                                  &kp LG(LEFT)    &trans    &kp CAPS          &lt LOWER ENTER  &kp BACKSPACE    &kp SPACE   &lt RAISE TAB  &kp LS(F10) &trans           &kp LG(RIGHT)
+&gresc            &kp N1           &kp N2           &kp N3               &kp N4             &kp N5                                        &kp N6         &kp N7             &kp N8                &kp N9           &kp N0              &kp MINUS
+&kp TAB           &kp Q            &kp W            &kp E                &kp R              &kp T                                         &kp Y          &kp U              &kp I                 &kp O            &kp P               &kp EQUAL
+&kp LEFT_SHIFT    &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LEFT_CONTROL D  &hrm LEFT_SHIFT F  &hrm CAPS G                                   &hrm CAPS H    &hrm LEFT_SHIFT J  &hrm RIGHT_CONTROL K  &hrm LEFT_ALT L  &hrm LEFT_GUI SEMI  &kp SQT
+&kp LG(LC(LEFT))  &kp Z            &kp X            &kp C                &kp V              &kp B            &kp DEL          &kp LA(F4)  &kp N          &kp M              &kp COMMA             &kp DOT          &kp FSLH            &kp LG(LC(RIGHT))
+                                   &kp LG(LEFT)     &trans               &kp CAPS           &lt LOWER ENTER  &kp BACKSPACE    &kp SPACE   &lt RAISE TAB  &kp LS(F10)        &trans                &kp LG(RIGHT)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -117,11 +120,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans      &trans     &trans       &trans       &trans                      &trans     &trans    &trans    &trans     &trans   &trans
-&trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                      &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
-&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                    &trans     &trans       &trans       &trans    &trans    &trans  &trans     &trans    &trans    &trans
+&trans  &trans  &trans  &trans             &trans           &trans                        &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &bt BT_NXT                    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK          &mkp RCLK        &trans                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans             &trans           &trans      &trans    &trans  &trans          &trans          &trans        &trans           &trans  &trans
+                &trans  &trans             &trans           &trans      &trans    &trans  &trans          &trans          &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
