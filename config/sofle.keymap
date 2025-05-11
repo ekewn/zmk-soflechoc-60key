@@ -33,7 +33,7 @@
 
         fullscreen {
             bindings = <&kp LG(UP_ARROW)>;
-            key-position = <28 27>;
+            key-positions = <28 27>;
         };
 
         esc {
