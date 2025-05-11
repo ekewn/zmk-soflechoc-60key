@@ -36,7 +36,7 @@
             key-position = <28 27>;
         };
 
-        ec {
+        esc {
             bindings = <&kp ESCAPE>;
             key-positions = <32 31>;
         };
