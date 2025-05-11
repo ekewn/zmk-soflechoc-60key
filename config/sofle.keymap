@@ -32,10 +32,10 @@
 
         fullscreen {
             bindings = <&kp LG(UP_ARROW)>;
-            key-positions = <29 28>;
+            key-position = <28 27>;
         };
 
-        esc {
+        ec {
             bindings = <&kp ESCAPE>;
             key-positions = <32 31>;
         };
