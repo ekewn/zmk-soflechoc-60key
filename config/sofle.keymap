@@ -45,6 +45,11 @@
             bindings = <&kp LG(DOWN)>;
             key-positions = <39 40>;
         };
+
+        launcher {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <32 33>;
+        };
     };
 
     behaviors {
