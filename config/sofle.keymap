@@ -71,6 +71,29 @@
         };
     };
 
+    macros {
+        both_parens: both_parens {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "BOTH_PARENS";
+        };
+
+        both_brackets: both_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RIGHT_BRACKET &kp LEFT>;
+            label = "BOTH_BRACKETS";
+        };
+
+        both_squirrely: both_squirrely {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp LS(RIGHT_BRACKET) &kp LEFT>;
+            label = "BOTH_SQUIRRELY";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -85,14 +108,12 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&gresc            &kp N1           &kp N2           &kp N3               &kp N4             &kp N5                                        &kp N6         &kp N7             &kp N8                &kp N9           &kp N0              &kp MINUS
-&kp TAB           &kp Q            &kp W            &kp E                &kp R              &kp T                                         &kp Y          &kp U              &kp I                 &kp O            &kp P               &kp EQUAL
-&kp LEFT_SHIFT    &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LEFT_CONTROL D  &hrm LEFT_SHIFT F  &hrm CAPS G                                   &hrm CAPS H    &hrm LEFT_SHIFT J  &hrm RIGHT_CONTROL K  &hrm LEFT_ALT L  &hrm LEFT_GUI SEMI  &kp SQT
-&kp LG(LC(LEFT))  &kp Z            &kp X            &kp C                &kp V              &kp B            &kp DEL          &kp LA(F4)  &kp N          &kp M              &kp COMMA             &kp DOT          &kp FSLH            &kp LG(LC(RIGHT))
-                                   &kp LG(LEFT)     &trans               &caps_word         &lt LOWER ENTER  &kp BACKSPACE    &kp SPACE   &lt RAISE TAB  &kp LS(F10)        &trans                &kp LG(RIGHT)
+&gresc           &kp N1           &kp N2            &kp N3               &kp N4             &kp N5                                        &kp N6         &kp N7             &kp N8                &kp N9             &kp N0              &kp MINUS
+&both_parens     &kp Q            &kp W             &kp E                &kp R              &kp T                                         &kp Y          &kp U              &kp I                 &kp O              &kp P               &kp EQUAL
+&both_brackets   &hrm LEFT_GUI A  &hrm LEFT_ALT S   &hrm LEFT_CONTROL D  &hrm LEFT_SHIFT F  &hrm CAPS G                                   &hrm CAPS H    &hrm LEFT_SHIFT J  &hrm RIGHT_CONTROL K  &hrm LEFT_ALT L    &hrm LEFT_GUI SEMI  &kp SQT
+&both_squirrely  &kp Z            &kp X             &kp C                &kp V              &kp B            &kp DEL          &kp LA(F4)  &kp N          &kp M              &kp COMMA             &kp DOT            &kp FSLH            &kp BACKSLASH
+                                  &kp LG(LC(LEFT))  &trans               &caps_word         &lt LOWER ENTER  &kp BACKSPACE    &kp SPACE   &lt RAISE TAB  &kp LS(F10)        &trans                &kp LG(LC(RIGHT))
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
