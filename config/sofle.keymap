@@ -37,7 +37,7 @@
         };
 
         launcher {
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&powertoys_windowwalker>;
             key-positions = <33 34>;
         };
 
@@ -86,6 +86,13 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LBKT) &kp LS(RIGHT_BRACKET) &kp LEFT>;
             label = "BOTH_SQUIRRELY";
+        };
+
+        powertoys_windowwalker: powertoys_windowwalker {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &kp SEMICOLON>;
+            label = "POWERTOYS_WINDOWWALKER";
         };
     };
 
