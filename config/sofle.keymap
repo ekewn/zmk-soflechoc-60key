@@ -37,12 +37,7 @@
         };
 
         launcher {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <33 34>;
-        };
-
-        winkey {
-            bindings = <&kp LGUI>;
+            bindings = <&kp LA(BACKSPACE)>;
             key-positions = <33 32>;
         };
     };
