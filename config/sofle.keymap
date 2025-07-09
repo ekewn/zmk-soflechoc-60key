@@ -37,7 +37,7 @@
         };
 
         launcher {
-            bindings = <&kp LA(BACKSPACE)>;
+            bindings = <&kp LA(SPACE)>;
             key-positions = <33 32>;
         };
     };
