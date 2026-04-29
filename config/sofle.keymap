@@ -36,7 +36,7 @@
         };
 
         launcher {
-            bindings = <&kp RA(SPACE)>;
+            bindings = <&kp RC(SPACE)>;
             key-positions = <33 32>;
         };
     };
